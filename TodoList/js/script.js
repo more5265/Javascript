@@ -4,7 +4,7 @@ const addBtn = document.getElementById('addButton');
 const toDoList = document.getElementById('List');
 
 addBtn.addEventListener('click', function(){
-    const listItem = document.createElement('li');
+    const list = document.createElement('li');
     const todoValue = inputBox.value.trim();
 
     if(todoValue == ""){
@@ -12,17 +12,17 @@ addBtn.addEventListener('click', function(){
     return;
     }
 
-    listItem.innerHTML = `
+    list.innerHTML = `
     ${todoValue}
     <button class="delete-btn">X</button>
     `;
 
-    toDoList.appendChild(listItem);
+    toDoList.appendChild(list);
     inputBox.value = "";
 
-    const deleteBtn = listItem.querySelector('.delete-btn');
+    const deleteBtn = list.querySelector('.delete-btn');
     deleteBtn.addEventListener('click', function(){
-        toDoList.removeChild(listItem);
+        toDoList.removeChild(list);
     });
 });
-};
+}; 
